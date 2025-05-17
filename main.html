@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> <!-- begins the metadata section, info about document not displayed directly-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roomiversity – Panel</title>
+  <!-- your shared styles, para mantener la misma estética --> 
+  <link rel="stylesheet" href="styles.css" /> 
+  <!-- main‐page styles -->
+  <link rel="stylesheet" href="main.css" />
+  <!-- Firebase SDKs (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <!-- this is the firestore database functionality-->
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+</head>
+<body> <!-- visible part of the document-->
+  <!-- Navbar -->
+  <div class="container">
+      <header id="navbar">
+          <!-- profile & layout-->
+          <div class="nav-row nav-top">
+              <button id ="toProfile" class="profile-btn">
+                  <img src="avatar.png" alt="Profile" class="avatar-icon"/>
+              </button>
+              <button id="logoutBtn">Log out</button>
+          </div>
+          <!-- title-->
+          <div class="nav-row nav-title">
+              <h1>Roomiversity</h1>
+          </div>
+          <!-- search + filter-->
+          <!-- Row 3: filters + search -->
+          <div class="nav-row nav-filters">
+              <button class="filter-btn" data-filter="location">Location</button>
+              <button class="filter-btn" data-filter="maxRent">Max Rent</button>
+              <button class="filter-btn" data-filter="type">Type</button>
+              <button id="searchBtn" class="search-btn">Search</button>
+
+              <!-- INSERT FILTER PANELS HERE -->
+              <div id="filter-panels">
+              <!-- Location panel -->
+                  <div id="panel-location" class="filter-panel">
+                      <label for="location-select">Choose neighborhood:</label>
+                      <select id="location-select">
+                          <option value="">-- none --</option>
+                          <option value="Poblenou">Poblenou</option>
+                          <option value="Gracia">Gràcia</option>
+                          <option value="Eixample">Eixample</option>
+                      <!-- etc. -->
+                      </select>
+                      <button class="apply-btn" data-filter="location">Apply</button>
+                      <button class="cancel-btn" data-filter="location">Cancel</button>
+                  </div>
+
+                  <!-- Max Rent panel -->
+                  <div id="panel-maxRent" class="filter-panel">
+                      <label for="rent-range">Max rent: <span id="rent-value">1200</span>€</label>
+                      <input type="range" id="rent-range" min="800" max="2000" value="1200" step="50" />
+                      <button class="apply-btn" data-filter="maxRent">Apply</button>
+                      <button class="cancel-btn" data-filter="maxRent">Cancel</button>
+                  </div>
+
+                  <!-- Type panel -->
+                  <div id="panel-type" class="filter-panel">
+                      <label for="type-select">Type:</label>
+                      <select id="type-select">
+                          <option value="">-- none --</option>
+                          <option value="Room">Room</option>
+                          <option value="Apartment">Apartment</option>
+                          <option value="House">House</option>
+                      </select>
+                      <button class="apply-btn" data-filter="type">Apply</button>
+                      <button class="cancel-btn" data-filter="type">Cancel</button>
+                  </div>
+              </div>
+            </div>
+      </header> 
+
+        <!-- Content area -->
+      <section id="ads-section">
+          <p class="placeholder">Here will appear ads.</p>
+      </section>
+  </div>
+  <!-- your Firebase config & auth logic -->
+  <script src="app.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* main.css */
+
+/* Body and container settings */
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/*==============================================================================
+  HEADER STYLES
+==============================================================================*/
+#navbar {
+  display: flex;
+  flex-direction: column;
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-top button {
+  margin-left: 0.5rem;
+}
+
+.nav-title {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.nav-title h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/*==============================================================================
+  ADS SECTION STYLES
+==============================================================================*/
+#ads-section {
+  background: #f4f6f8;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ads-section .placeholder {
+  color: #666;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+/*==============================================================================
+  PROFILE AVATAR & BUTTON SIZING
+==============================================================================*/
+.profile-btn {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.avatar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-top button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  max-width: 80px;
+  white-space: nowrap;
+}
+
+/*==============================================================================
+  FILTERS SECTION STYLES
+==============================================================================*/
+.nav-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: #0056b3;
+}
+
+.filter-btn.active {
+  background: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
+
+.search-btn {
+  margin-left: auto;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*==============================================================================
+  FILTER PANELS STYLES
+==============================================================================*/
+#filter-panels {
+  position: static;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.filter-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  z-index: 10;
+  display: none;
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+/*==============================================================================
+  BUTTON STYLES (Apply & Cancel)
+==============================================================================*/
+.apply-btn,
+.cancel-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.apply-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+}
+
+.apply-btn:hover {
+  background: #0056b3;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: #555;
+  border: 1px solid #ccc;
+}
+
+.cancel-btn:hover {
+  background: #f0f0f0;
+}
