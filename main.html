@@ -34,7 +34,11 @@
           <div class="nav-row nav-filters">
               <button class="filter-btn" data-filter="location">Location</button>
               <button class="filter-btn" data-filter="maxRent">Max Rent</button>
+              <button class="filter-btn" data-filter="availability">Availability</button>
+              
               <button class="filter-btn" data-filter="type">Type</button>
+              <button class="filter-btn" data-filter="bedrooms">Bedrooms</button>
+              
               <button id="searchBtn" class="search-btn">Search</button>
 
               <!-- INSERT FILTER PANELS HERE -->
@@ -72,6 +76,30 @@
                       </select>
                       <button class="apply-btn" data-filter="type">Apply</button>
                       <button class="cancel-btn" data-filter="type">Cancel</button>
+                  </div>
+
+                  <!-- Bedroom panel-->
+                  <div id="panel-bedrooms" class="filter-panel">
+                      <label for="bedroom-select">Choose number of berdooms:</label>
+                      <select id="bedroom-select">
+                        <option value="1">1 Bedroom</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3+ Bedrooms</option>
+                      </select>
+                      <button class="apply-btn" data-filter="bedrooms">Apply</button>
+                      <button class="cancel-btn" data-filter="bedrooms">Cancel</button>
+                  </div>
+
+                  <!-- Availability panel -->
+                  <div id="panel-availability" class="filter-panel">
+                      <label for="start-date">Available from:</label>
+                      <input type="date" id="start-date"/>
+
+                      <label for="end-date">Available until:</label>
+                      <input type="date" id="end-date"/>
+
+                      <button class="apply-btn" data-filter="availability">Apply</button>
+                      <button class="cancel-btn" data-filter="availability">Cancel</button>
                   </div>
               </div>
             </div>
