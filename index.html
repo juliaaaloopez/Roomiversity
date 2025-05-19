@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Housing App</title>
+  <title>Roomiversity</title>
   <link rel="stylesheet" href="styles.css" />
   
   <!-- Firebase SDKs (compat) -->
@@ -13,31 +13,57 @@
 </head>
 <body>
   <div id="container">
-    <h1>Student Housing App</h1>
+    <h1>Roomiversity</h1>
+
+    <!-- Login -->
+    <div id="login" class="section active">
+      <h2>Iniciar Sesión</h2>
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <div class="password-container">
+        <input type="password" id="loginPassword" placeholder="Contraseña" />
+        <button type="button" class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</button>
+      </div>
+      <button onclick="login()">Entrar</button>
+      <div id="loginError" class="error-message"></div>
+      <p><a href="#" onclick="showPasswordReset()">¿Olvidaste tu contraseña?</a></p>
+      <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate aquí</a></p>
+    </div>
 
     <!-- Registro -->
-    <div id="register">
+    <div id="register" class="section">
       <h2>Registro</h2>
-      <input type="text" id="registerName" placeholder="Nombre" />
+      <input type="text" id="registerName" placeholder="Nombre de Usuario" />
       <input type="email" id="registerEmail" placeholder="Email" />
-      <input type="password" id="registerPassword" placeholder="Contraseña" />
+      <div class="password-container">
+        <input type="password" id="registerPassword" placeholder="Contraseña" />
+        <button type="button" class="toggle-password" onclick="togglePassword('registerPassword', this)">👁️</button>
+      </div>
+      <ul id="passwordCriteria" class="password-criteria">
+        <li id="length" class="invalid">❌ Mínimo 6 caracteres</li>
+        <li id="uppercase" class="invalid">❌ Al menos una mayúscula</li>
+        <li id="lowercase" class="invalid">❌ Al menos una minúscula</li>
+        <li id="number" class="invalid">❌ Al menos un número</li>
+      </ul>
       <select id="registerType">
         <option value="Seeker">Seeker</option>
         <option value="Host">Host</option>
       </select>
       <button onclick="register()">Registrar</button>
+      <div id="registerError" class="error-message"></div>
+      <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión aquí</a></p>
     </div>
 
-    <!-- Login -->
-    <div id="login">
-      <h2>Iniciar Sesión</h2>
-      <input type="email" id="loginEmail" placeholder="Email" />
-      <input type="password" id="loginPassword" placeholder="Contraseña" />
-      <button onclick="login()">Entrar</button>
+    <!-- Recuperación de contraseña -->
+    <div id="passwordReset" class="section">
+      <h2>Recuperar Contraseña</h2>
+      <input type="email" id="resetEmail" placeholder="Email" />
+      <button onclick="resetPassword()">Recuperar</button>
+      <div id="resetError" class="error-message"></div>
+      <button onclick="cancelPasswordReset()">Cancelar</button>
     </div>
 
     <!-- Bienvenida -->
-    <div id="welcome" style="display:none">
+    <div id="welcome" class="section">
       <h2 id="welcomeText"></h2>
       <button onclick="logout()">Cerrar sesión</button>
     </div>
